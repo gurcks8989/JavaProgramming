@@ -6,9 +6,9 @@ import java.text.DecimalFormat;
 
 class calculator { 
 	
-    private String s0, s1, s2 ; 											// store operator and operands 
+    private String s0, s1, s2 ; 								// store operator and operands 
     
-    calculator(){ 													// default constrcutor 			
+    calculator(){ 												// default constrcutor 			
         s0 = s1 = s2 = "" ; 									// s0 is num1, s1 is operator, s2 is num2
     }
     
@@ -19,7 +19,7 @@ class calculator {
         
 	}
 	
-	public String compare(String s) {  														// if the value is a number 
+	public String compare(String s) {  							// if the value is a number 
         if (('0' <= s.charAt(0) && s.charAt(0) <= '9') || s.charAt(0) == '.') { 
 
             if (!s1.equals(""))									// When operator was entered.
@@ -27,13 +27,13 @@ class calculator {
             else												// When operator wasn't entered.
                 s0 += s ; 
             
-            s = s0 + s1 + s2 ; 							// Set the value of text 
+            s = s0 + s1 + s2 ; 									// Set the value of text 
         } 
         else if (s.charAt(0) == 'C') { 							// When Clear is entered
 
             s0 = s1 = s2 = ""; 									// Initialize the string.
   
-            s = s0 + s1 + s2 ; 							// Set the value of text 
+            s = s0 + s1 + s2 ; 									// Set the value of text 
         } 
         else if(s.charAt(0) == '<') {							// When Backspace is entered
         	if(!s2.equals("")) {
@@ -44,7 +44,7 @@ class calculator {
         	else if(!s0.equals(""))
         		s0 = s0.substring(0, s0.length()-1) ; 			// Removes the last character in the string s2.
 
-            s = s0 + s1 + s2 ; 							// Set the value of text 
+            s = s0 + s1 + s2 ; 									// Set the value of text 
         }
         else if (s.charAt(0) == '=') { 							// Output result.
         	if(s1.equals(""))
@@ -72,7 +72,7 @@ class calculator {
             else												// Operator wasn't entered.
             	te = num1.toString() ;
             										
-        	s = s0 + s1 + s2 + "=" + te ; 				// Set the value of text
+        	s = s0 + s1 + s2 + "=" + te ; 						// Set the value of text
            	
         	s0 = te.toString(); 								// Convert it to string
             s1 = s2 = ""; 										// Initialize num2, operator
@@ -80,9 +80,9 @@ class calculator {
         } 
         else if (s1.equals("") || s2.equals("")) { 				// Input Operator
             s1 = s; 
-            s = s0 + s1 + s2 ; 							// Set the value of text 
+            s = s0 + s1 + s2 ; 									// Set the value of text 
         } 
-        
-        return(s) ; 							// Set the value of text 
+        	
+        return(s) ; 											// Set the value of text 
     }
 }
