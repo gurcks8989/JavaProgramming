@@ -4,17 +4,15 @@ package calculator;
 import java.awt.* ;
 import java.awt.event.*;
 
+import javax.swing.JTextField;
+
 
 class OpenWindow extends calculator{
-
-	
-	calculator c = new calculator() ;						// create a object of class
-	
-	TextField l = new TextField(15) ;  				// create a JTextField
-		
-	String Text ;
-	
+			
 	public void makeFrame() {
+		
+		calculator c = new calculator() ;						// create a object of class
+		
 		Frame frame = new Frame("Calculrator");				// create a frame
 		
 		int width = 360, height = 480;						// Set width, height of frame size
@@ -33,10 +31,12 @@ class OpenWindow extends calculator{
 	    Font font1 = new Font("DialogIntput",Font.BOLD,30) ;	// number & operator font
 	    
 	    Font font2 = new Font("DialogIntput",Font.ITALIC,20) ;	// Calculrator interface font.
-		
 	    
+		JTextField l = new JTextField(15) ;  				// create a JTextField
+		
 	    l.setEditable(false); 									// JTextField l can only be used as a keypad to prevent editing.
 	    l.setFont(font2) ;										// Set the JTextField l to font2. 
+	    l.setHorizontalAlignment(JTextField.RIGHT) ;
 	    
 		frame.setSize(width, height) ;							// The frame setting width is 360px and height = 480px.
 	    frame.setResizable(false);								// The frame cannot be resized.

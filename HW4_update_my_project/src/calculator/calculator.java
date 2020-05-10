@@ -12,13 +12,6 @@ class calculator {
         s0 = s1 = s2 = "" ; 									// s0 is num1, s1 is operator, s2 is num2
     }
     
-    calculator(String s0, String s1, String s2){
-    	this.s0 = s0 ;
-    	this.s1 = s1 ;
-    	this.s2 = s2 ;
-    }
-    
-    
 	public static void main(String[] args) {
 		
 		OpenWindow f = new OpenWindow() ;
@@ -27,7 +20,6 @@ class calculator {
 	}
 	
 	public String compare(String s) {  														// if the value is a number 
-		System.out.println(s + "*" + s0 + s1 + s2) ;
         if (('0' <= s.charAt(0) && s.charAt(0) <= '9') || s.charAt(0) == '.') { 
 
             if (!s1.equals(""))									// When operator was entered.
